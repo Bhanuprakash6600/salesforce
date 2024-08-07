@@ -1,0 +1,21 @@
+<apex:page >
+<apex:image value="{!$Resource.hlo1}"/>
+<apex:pageBlock title="block1">
+
+<center><h1>Welcome to saleforce</h1>
+</center>
+</apex:pageBlock>
+<apex:form >
+<br/>
+<br/>
+<br/>
+<br/>
+<apex:pageBlock >
+<h>first program</h>
+</apex:pageBlock>
+<h2>first program</h2>
+
+
+
+</apex:form>
+</apex:page>

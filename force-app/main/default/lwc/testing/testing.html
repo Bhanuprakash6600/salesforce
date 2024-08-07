@@ -1,0 +1,18 @@
+<template>
+<lightning-card title="Creating account">
+</lightning-card>
+    <div class="slds-p-horizontal_small">
+    <lightning-record-form 
+        object-api-name={accountObject}
+        fields={myFields}
+        density="comfy"
+       >
+    </lightning-record-form>
+
+</div>
+
+
+    <lightning-button class="slds-m-top_small" variant="brand" type="submit" name="Submit" label="Submit" onclick={handleAccountCreated}></lightning-button>
+
+
+</template>

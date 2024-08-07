@@ -1,0 +1,21 @@
+<aura:component controller="CitizenLightngcontrollerbhanu" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+  <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="Emailid" type="String"/>
+     <aura:attribute name="dataloader" type="Object"/>
+    
+    <lightning:card>
+         <lightning:input  label="enter email_id" onclick="{!v.Emailid}"/>
+        <lightning:button variant="brand" label="display citizen" onclick="{!c.myAction}"/>
+              <lightning:button variant="brand" label="filter the data" onclick="{!v.dataloader}"/>
+      <div style="height: 300px">
+        <lightning:datatable
+                keyField="id"
+                data="{! v.data }"
+                columns="{! v.columns }"
+                hideCheckboxColumn="true"/>
+    </div>
+
+    </lightning:card>
+</aura:component>

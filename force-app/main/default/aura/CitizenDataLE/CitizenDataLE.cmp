@@ -1,0 +1,30 @@
+<aura:component controller="CitizenLightningController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="showform" type="boolean" default="false"/>
+    
+    
+    <aura:handler name="Modalcancel" event="c:Modalcancel" action="{!c.hidemodal}"></aura:handler>
+    
+    <lightning:card>
+         
+        <lightning:button variant="brand" label="display citizen" onclick="{!c.myAction}"/>
+        <lightning:button variant="brand" label="create citizen" onclick="{!c.showcreatecitizen}"/>
+    
+        <lightning:datatable
+                keyField="id"
+                data="{! v.data }"
+                columns="{! v.columns }"
+                hideCheckboxColumn="true"/>
+    
+        <aura:if isTrue= "{!v.showform}">
+            alert("hlo");
+        
+       <!--  <c.RecordForm></c.RecordForm>-->
+            <c.Modal></c.Modal>
+        </aura:if>
+
+       
+    </lightning:card>
+</aura:component>

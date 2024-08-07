@@ -1,0 +1,37 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+    
+   
+    
+   <!-- <lightning:recordForm
+           recordId=""
+           objectApiName="Citizens_c"
+           layoutType="Full"
+           mode="view"                />
+  
+        <aura:attribute name="fields" type="String[]" default="['Name,	Email_Id__c,Age__c']" />
+        <aura:attribute name="recordID" type="String" />
+     <lightning:card>
+    <lightning:recordForm recordId="{!v.recordId}"
+        objectApiName="Citizens_c"
+        fields="{!v.fields}"
+        
+        onsubmit="{!c.handleSubmit}" />
+    </lightning:card>
+  -->
+     <lightning:recordEditForm recordId="003XXXXXXXXXXXXXXX" objectApiName="Contact">
+      
+
+         <lightning:inputfield field-name="FirstName"/> 
+         <lightning:inputfield field-name="LastName"/> 
+         <lightning:inputfield field-name="Email"/> 
+        <lightning:button
+            class="slds-m-top_small"
+            variant="brand"
+            type="submit"
+            name="update"
+            label="Update"
+        >
+        </lightning:button>
+    </lightning:recordEditForm>
+</aura:component>

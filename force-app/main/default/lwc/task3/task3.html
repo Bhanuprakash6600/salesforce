@@ -1,0 +1,82 @@
+<template>
+    <lightning-card>
+        
+            <div class={showHide} >
+           <lightning-record-edit-form  onsubmit= {handleSubmit} object-api-name="CustomObj__c" onsuccess={handleSuccess}  onerror={handleError} >
+        <template if:false={showDetails}>
+    
+            <div class="test2">
+    
+            <lightning-card title="Candidate Info" icon-name="standardrecord"></lightning-card>
+        
+            <lightning-input-field field-name="	Name"> </lightning-input-field>
+    
+            <lightning-input-field field-name="Last_Name__c"> </lightning-input-field>
+    
+            <lightning-input-field field-name="Father_name__c"> </lightning-input-field>
+    
+            <lightning-input-field field-name="inter_marks__c"> </lightning-input-field>
+    
+            <lightning-input-field field-name="Email__c" pattern="[A-Za-z0-9._-]+@[a-z0-9-]+.[a-z]{2,}$" required="true"> </lightning-input-field>
+    
+            <lightning-input-field field-name="Address__c" required="true"> </lightning-input-field>
+    
+            <lightning-input-field field-name="Pin_code__c"> </lightning-input-field>
+    
+            <lightning-input-field field-name="state__c"> </lightning-input-field>
+    
+            <lightning-input-field field-name="Mobile_number__c" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}$" message-when-pattern-mismatch="Please enter a valid phone number" required>required="true" > </lightning-input-field>
+    
+            <lightning-input-field field-name="Course_list__c"> </lightning-input-field>
+    
+    
+    
+                        <lightning-button   class="slds-m-top_small"  type="submit"   label="Submit"  disabled={showOutput} >
+                    </lightning-button>
+                </div>
+    
+        </template>
+            </lightning-record-edit-form>
+            </div>
+    
+            <template if:true={showDetails}>
+                <div class="test">           <lightning-card title="verfication form" icon-name="standardrecord"></lightning-card>
+                <div class="slds-m-top_small">
+    
+                    <lightning-input label="Candidate" value={fields.Name} disabled></lightning-input>
+                    <lightning-input label="Last Name" value={fields.Last_Name__c} disabled></lightning-input>
+                    <lightning-input label="father name" value={fields.Father_name__c} disabled>
+                    </lightning-input>
+                    <lightning-input label="inter mark" value={fields.inter_marks__c} disabled></lightning-input>
+                    <lightning-input label="Email Id" value={fields.Email__c} disabled></lightning-input>
+                    <lightning-input label="address" value={fields.Address__c} disabled></lightning-input>
+                    <lightning-input label="Pin code" value={fields.Pin_code__c} disabled></lightning-input>
+                    <lightning-input label="Mobile Number" value={fields.Mobile_number__c} disabled></lightning-input>
+                    <lightning-input label="Course Type " value={fields.Course_list__c} disabled></lightning-input>
+        
+        
+        
+    
+    
+    
+    
+                </div>
+                <div class="slds-checkbox">
+                    <lightning-input type="checkbox" label="Terms and Conditions" onchange={handleCheckBox} ></lightning-input>
+                </div>
+                <div>
+    
+    
+    
+                    <lightning-button label="Save" variant="brand" disabled = {buttonShow} onclick={SaveForm}></lightning-button>
+    
+                </div>
+            </div>
+     
+            </template>
+    
+    
+    
+    
+        </Lightning-card>
+    </template>

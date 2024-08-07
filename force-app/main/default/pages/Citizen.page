@@ -1,0 +1,26 @@
+<apex:page controller="Citizen1" >
+    <apex:form >
+        <apex:pageMessages ></apex:pageMessages>
+        <apex:pageBlock title="Citizen form filling">
+            <apex:pageBlockSection columns="1">
+                <apex:inputText label="Firstname" value="{!F}" />
+                <apex:inputText label="Lastname" value="{!Ln}"/>
+                <apex:inputText label="Phone" value="{!Phone}"/>
+                <apex:inputText label="Email" value="{!Email}"/>
+                <apex:inputText label="Address" value="{!Address}"/>
+                <apex:inputText label="DOB" value="{!DoB}"/>
+                <apex:inputText label="PassWord" value="{!password}"/>
+                
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="sign" action="{!submit}"/>
+            </apex:pageBlockButtons>
+      
+           Message :{!output}
+             
+            
+            
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

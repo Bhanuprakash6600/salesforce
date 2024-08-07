@@ -1,0 +1,28 @@
+<apex:page lightningStylesheets="true" controller="VaccineSlotBookingController">
+     <h1>Register for one of the vaccine </h1>
+    <script>
+    alert('Hi');
+    </script>
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="3">
+                
+                <apex:image value="{!$Resource.covidshield}" height="500px" width="300px">
+                    <apex:actionSupport event="onclick" action="{!gotoCovishieldpage}"/>
+                </apex:image>
+                  <apex:image value="{!$Resource.covin}" height="500px" width="300px"/>
+                 <apex:image value="{!$Resource.covirus}" height="500px" width="300px"/>
+                	
+                   
+                
+
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        
+   
+    </apex:form>
+    
+   
+   
+</apex:page>

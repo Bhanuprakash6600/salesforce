@@ -1,0 +1,26 @@
+.test{
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10;
+    outline-width: 400;
+    outline-style: groove;
+    border: 10ch;
+    border-top-color: black;
+    background-color: rgb(14, 165, 21);
+    outline-color: darkred;
+    box-shadow: 10in;
+    border: 10ch;
+}
+
+.test2{
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10;
+    outline-width: 400;
+    outline-style: groove;
+    border: 10ch;
+    border-top-color: black;
+    background-color: yellow;
+    outline-color: black;
+    box-shadow: 10in;
+}

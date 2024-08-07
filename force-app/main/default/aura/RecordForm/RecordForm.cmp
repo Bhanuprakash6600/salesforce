@@ -1,0 +1,21 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+   <!-- <lightning:card>
+    <lightning:recordForm
+           recordId=""
+           objectApiName="Citizens_c"
+           layoutType="Full"
+           mode="view"                />
+    </lightning:card>
+    -->
+            <aura:attribute name="fields" type="String[]" default="['Name','AnnualRevenue','Industry']"  />
+        <aura:attribute name="recordID" type="String" />
+     <lightning:card>
+    <lightning:recordForm recordId="{!v.recordId}"
+        objectApiName="Account"
+        fields="{!v.fields}"
+        
+        onsubmit="{!c.handleSubmit}" />
+           
+    </lightning:card>
+</aura:component>

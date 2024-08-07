@@ -1,0 +1,25 @@
+<apex:page controller="Calculaation1">
+    <apex:form >
+        <apex:pageBlock title="Calculator">
+           <br/>
+            <br/>
+            <br/>
+            <apex:pageBlockSection columns="2">
+            <apex:inputText label="Enter the num1" value="{!Num1}"/>
+            <apex:inputText label="Enter the num2" value="{!Num2}"/>
+                <br/>
+            </apex:pageBlockSection>
+            Result : {!output}
+            
+            <br/>
+            <br/>
+            <br/>
+        
+            <apex:commandButton value="Additon" action="{!doAdd}"/>
+            <apex:commandButton value="Subtraction" action="{!doSub}"/>
+            <apex:commandButton value="Mutiplication" action="{!doMul}"/>
+            <apex:commandButton value="Division" action="{!doDivi}"/>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

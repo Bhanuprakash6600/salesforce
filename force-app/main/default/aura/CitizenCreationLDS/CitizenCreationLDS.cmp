@@ -1,0 +1,15 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+
+    <lightning:card>
+         <lightning:RecordForm
+    recordId=""
+    objectApiName="Citizens_c"
+    layoutType="Full"
+    mode="view"
+    />
+    </lightning:card>
+   
+    
+   
+</aura:component>

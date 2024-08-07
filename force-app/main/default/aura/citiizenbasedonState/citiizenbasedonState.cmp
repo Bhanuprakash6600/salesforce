@@ -1,0 +1,29 @@
+<aura:component controller= "CitizenLightningController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+
+    <aura:attribute name="options" type="List" default="[
+                                                       {'label':'Ap','value':'Andhra'},
+                                                        {'label':'KA','value':'kanataka'},
+                                                        {'label':'tn','value':'tamilnaidu'},
+                                                       
+                                                       
+                                                       ]"/>
+    
+    <aura:attribute name="CitizenData" type="List" ></aura:attribute>
+    <aura:attribute name="citizenColumns" type="List" ></aura:attribute>
+    <lightning:card>
+    <lightning:layout>
+        <lightning:layoutItem size="6">
+            <lightning:combobox name="state" label="state" value=""  options="{!v.options}" onchange="{!c.handlechange}"/>
+        </lightning:layoutItem>
+         <lightning:layoutItem size ="10">
+          
+             <lightning:dataTable  KeyField="id"
+                                   data="{!v.CitizenData}"
+                                   columsn="{!v.citizenColumns}">
+                 
+             </lightning:dataTable>
+         </lightning:layoutItem>
+        
+    </lightning:layout>
+        </lightning:card>
+</aura:component>

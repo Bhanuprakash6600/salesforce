@@ -1,0 +1,79 @@
+import { LightningElement,track,api} from 'lwc';
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
+import Candidate_object from '@salesforce/schema/Candidate__c';
+
+export default class MyCandidateComponent extends LightningElement {
+   objectApiName=Candidate_object;
+   showDetails = false;
+   fields;
+   component;
+   showHide;
+   buttonShow = true;
+   showErrMsg = false;
+   handleCheckBox(event){
+    if(event.target.checked == true)
+    this.buttonShow = false;
+    else
+    this.buttonShow = true;
+   }
+
+   
+   handleSubmit(event){
+    event.preventDefault();
+    this.showHide = 'slds-hidden';
+    this.showDetails = true;
+    this.fields = event.detail.fields;
+   }
+
+  
+   
+        
+    
+   
+    
+    handleRemove(event){
+        const valueRemoved =event.target.name;
+        this.allValues.splice(this.allValues.indexOf(valueRemoved),1);
+    }
+   
+    Error(event){
+
+    }
+    
+    SaveForm(){
+        if(!this.showErrMsg){
+             this.template.querySelector('lightning-record-edit-form').submit(this.fields);
+             alert("Your data was saved")
+             window.location.href ="recordlist/Candidate__c/Default";
+            
+        }
+    }
+            Submit(event){
+                event.preventDefault();
+                this.showHide = 'slds-hidden';
+                this.showDetails = true;
+                this.fields = event.detail.fields;
+         
+            }
+                closeAction(){
+                    const isClose = true;
+                  
+                    this.dispatchEvent(new CloseActionScreenEvent());
+                  
+                    const valueChangeEvent = new CustomEvent("closeAction", {
+                  
+                        detail: { isClose }
+                  
+                      });
+                  
+                      
+                  
+                      this.dispatchEvent(valueChangeEvent);
+                  }
+            
+
+                  
+
+
+    
+}

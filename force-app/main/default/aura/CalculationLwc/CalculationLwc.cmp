@@ -1,0 +1,21 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+   <aura:attribute name ="input1" type="Integer"></aura:attribute>
+    <aura:attribute name ="input2" type="Integer"></aura:attribute>
+    <aura:attribute name ="output" type="Integer"></aura:attribute>
+  <br/>
+    <br/>
+    <br/>  
+    <lightning:input label="Enter the num1"  value="{!v.input1}"></lightning:input>
+     <lightning:input label="Enter the num2" value="{!v.input2}"></lightning:input>
+    <br/>
+    <br/>
+    <br/>
+    {!v.output}
+    <br/>
+    <br/>
+    <br/>
+       <lightning:button label="Addition" aura:id="add" variant="Brand" onclick="{!c.Docall}"></lightning:button>  
+    <lightning:button label="Substraction" aura:id="sub" variant="destructive" onclick="{!c.Docall}"></lightning:button>
+    <lightning:button label="Multiplicatin" aura:id="mult" variant="success" onclick="{!c.Docall}"></lightning:button>
+    <lightning:button label="Division" aura:id="div" variant="success" onclick="{!c.Docall}"></lightning:button>
+</aura:component>

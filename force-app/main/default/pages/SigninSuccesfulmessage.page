@@ -1,0 +1,46 @@
+<apex:page lightningStylesheets="true" controller="VaccineSlotBookingController">
+    <apex:pageMessage detail="you are in slot booking page!" severity="confirm"></apex:pageMessage>
+    <br/>
+    <br/>
+     <script>
+    function calljs(recordName){
+        
+        var decision =prompt("Do you want to cancel appointment-you can mantion Yes/NO");
+       
+        if(decision==='Yes'){
+             alert('before');
+            CallApexToDeleteRecord(recordName);
+             alert('after');
+                
+            
+       }
+}
+    </script>
+    <apex:form >
+     <!--   <apex:actionStatus startText="Please wait...........Record is updated" id="Status1"startStyle="color:green;font"></apex:actionStatus>
+        <apex:actionPoller interval="5" action="{!refresh10sec}" reRender="Block2" status="Status1"/> -->
+        <apex:actionFunction action="{!DeleteRecord}" name="CallApexToDeleteRecord"reRender="Block2">
+        <apex:param assignTo="{!recordNametoDelete}" name="recordNametoDelete" value=""/>
+            </apex:actionFunction>
+        <apex:pageBlock id="Block2">    
+            <apex:commandButton value="Slot blooking"action="{!redirectToslotDetailpage}"/>
+            
+        <apex:commandButton value="Add Family Member"  />
+            </apex:pageBlock>
+   
+    
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!slitsBooked}" var="rec" >
+                <apex:column value="{!rec.Id}"/>
+                 <apex:column value="{!rec.Name}"/>
+                 <apex:column value="{!rec.Date_of_vaccine__c}"/>
+                 <apex:column value="{!rec.Citizecns__c}"/>
+                <apex:column value="{!rec.Vaccine__c}"/>
+                <apex:column >
+                    <apex:commandButton value="cancel appointment" onclick="calljs('{!rec.Name}')"/>
+                </apex:column>
+                    
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+</apex:form>    
+</apex:page>

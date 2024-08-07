@@ -1,0 +1,16 @@
+<apex:page controller="DataUtillityClass" lightningStylesheets="true">
+    <apex:form >
+        <apex:pageBlock title="orderlist">
+            <apex:pageBlockTable value="{!orderlist}" var="rec">
+                              <apex:column value="{!rec.Name}"/>
+                <apex:column value="{!rec.Name}"/>
+                <apex:column value="{!rec.Vaccine__c}"/>
+                <apex:column value="{!rec.Vaccine__R.Manufactured_By__c}"/>
+                <apex:column value="{!rec.Vaccine__R.Instruction_to_use_vaccine__c}"/>
+                <apex:column value="{!rec.Vaccine__R.No_OF_Doses__c}"/>
+
+         </apex:pageBlockTable> 
+        </apex:pageBlock>
+
+    </apex:form>
+</apex:page>

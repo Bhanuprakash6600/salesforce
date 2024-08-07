@@ -1,0 +1,12 @@
+<apex:page controller="DataUtillityClass" lightningStylesheets="true">
+    <apex:form >
+        <apex:pageBlock title="Accounts">
+            <apex:dataTable value="{!Accounts}" var="rec">
+                <apex:column value="{!rec.Name}"/>
+                <apex:column value="{!rec.Id}"/>
+                
+      </apex:dataTable>
+        </apex:pageBlock>
+
+    </apex:form>
+</apex:page>

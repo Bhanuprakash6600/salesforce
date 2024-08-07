@@ -1,0 +1,33 @@
+<apex:page lightningStylesheets="true" controller="CovishiedDetailscontroller">
+    <apex:form >
+        <apex:commandButton value="Home" action="{!gotoHomepage}" immediate="true"/>
+        <h1>
+            Booking slot for covidshield
+        </h1>
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="1">
+                <apex:image value="{!$Resource.covidshield}" height="500px" width="300px"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageMessages ></apex:pageMessages>
+        <apex:pageBlock title="Details" rendered="{!ShowEntryDetails}">
+            <apex:pageBlockSection columns="1" >
+               <apex:inputField value="{!vaccine.Citizecns__c}"/>
+                               <apex:outputField value="{!vaccine.Vaccine__c}"/>
+                 <apex:inputField value="{!vaccine.Date_of_vaccine__c}"/>
+            </apex:pageBlockSection>
+            
+        </apex:pageBlock>
+        
+        <apex:commandButton value="save" action="{!save}"/>
+        
+         <apex:pageBlock title="Details" rendered="{!ShowconfirmationDetails}">
+            <apex:pageBlockSection columns="1" >
+               <apex:outputField value="{!vaccine.Citizecns__c}"/>
+                <apex:outputField value="{!vaccine.Vaccine__c}"/>
+                 <apex:outputField value="{!vaccine.Date_of_vaccine__c}"/>
+            </apex:pageBlockSection>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
